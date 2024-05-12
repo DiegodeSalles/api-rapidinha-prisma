@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function PostList() {
+export async function GetPostList() {
   const posts = await prisma.post.findMany();
 
   return posts;

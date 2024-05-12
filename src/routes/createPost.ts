@@ -1,5 +1,5 @@
 import express from "express";
-import { PostCreate } from "../model/PostCreate";
+import { CreatePost } from "../model/post/CreatePost";
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ interface PostSchema {
 router.post("/user/:id/post", async (req, res) => {
   const userId = Number(req.params.id);
   const postData: PostSchema = req.body;
-  const post = await PostCreate(userId, postData);
+  const post = await CreatePost(userId, postData);
 
   res.send(post);
 });

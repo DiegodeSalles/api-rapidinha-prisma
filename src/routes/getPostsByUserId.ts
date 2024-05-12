@@ -1,11 +1,11 @@
 import express from "express";
-import PostByUserId from "../model/PostByUserId";
+import { GetPostByUserId } from "../model/post/GetPostByUserId";
 
 const router = express.Router();
 
 router.get("/user/:id/posts", async (req, res) => {
   const authorId = Number(req.params.id);
-  const posts = await PostByUserId(authorId);
+  const posts = await GetPostByUserId(authorId);
 
   res.send(posts);
 });

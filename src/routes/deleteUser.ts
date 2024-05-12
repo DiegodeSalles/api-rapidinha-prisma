@@ -1,5 +1,5 @@
 import express from "express";
-import { UserDelete } from "../model/UserDelete";
+import { UserDelete } from "../model/user/UserDelete";
 
 const router = express.Router();
 

@@ -8,7 +8,7 @@ interface PostSchema {
   published: boolean;
 }
 
-export async function PostCreate(authorId: number, postData: PostSchema) {
+export async function CreatePost(authorId: number, postData: PostSchema) {
   const post = await prisma.post.create({
     data: {
       title: postData.title,

@@ -1,5 +1,5 @@
 import express from "express";
-import { UserUpdate } from "../model/UserUpdate";
+import { UserUpdate } from "../model/user/UserUpdate";
 
 const router = express.Router();
 

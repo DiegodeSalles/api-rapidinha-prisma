@@ -1,5 +1,5 @@
 import express from "express";
-import { DeletePost } from "../model/DeletePost";
+import { DeletePost } from "../model/post/DeletePost";
 
 const router = express.Router();
 

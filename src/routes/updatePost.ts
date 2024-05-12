@@ -1,5 +1,5 @@
 import express from "express";
-import { UpdatePost } from "../model/UpdatePost";
+import { UpdatePost } from "../model/post/UpdatePost";
 
 const router = express.Router();
 
