@@ -7,6 +7,7 @@ export async function GetUserById(id: number) {
     where: {
       id,
     },
+    include: { posts: {} },
   });
 
   return user;
