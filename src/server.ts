@@ -7,6 +7,7 @@ import deleteUser from "./routes/deleteUser";
 import createPost from "./routes/createPost";
 import postList from "./routes/getPosts";
 import postsByUserId from "./routes/getPostsByUserId";
+import getPostById from "./routes/getPostById";
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,7 @@ app.use(deleteUser);
 app.use(createPost);
 app.use(postList);
 app.use(postsByUserId);
+app.use(getPostById);
 
 app.listen(port, () => {
   console.log(`Servidor inciado em http://localhost:${port}`);
