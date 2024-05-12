@@ -32,3 +32,6 @@ Content-Type: application/json
   "content": "Teste teste teste",
   "published": true
 }
+
+###
+GET http://localhost:3000/posts
