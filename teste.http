@@ -39,3 +39,5 @@ GET http://localhost:3000/posts
 GET http://localhost:3000/user/2/posts
 ###
 GET http://localhost:3000/user/2/posts/2
+###
+DELETE http://localhost:3000/user/2/posts/1
