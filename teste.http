@@ -32,6 +32,14 @@ Content-Type: application/json
   "content": "Teste teste teste",
   "published": true
 }
+###
+PUT http://localhost:3000/user/2/posts/3
+Content-Type: application/json
+
+{
+  "title": "AAAAABBBB",
+  "published": true
+}
 
 ###
 GET http://localhost:3000/posts
@@ -40,4 +48,4 @@ GET http://localhost:3000/user/2/posts
 ###
 GET http://localhost:3000/user/2/posts/2
 ###
-DELETE http://localhost:3000/user/2/posts/1
+DELETE http://localhost:3000/user/2/posts/3
