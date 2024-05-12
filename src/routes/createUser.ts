@@ -1,5 +1,5 @@
 import express from "express";
-import { UserCreate } from "../model/user/UserCreate";
+import { CreateUser } from "../model/user/CreateUser";
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ interface UserSchema {
 
 router.post("/user/create", async (req, res) => {
   const userData: UserSchema = req.body;
-  const user = await UserCreate(userData);
+  const user = await CreateUser(userData);
 
   res.send(user);
 });

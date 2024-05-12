@@ -7,7 +7,7 @@ interface UserUpdateSchema {
   name?: string;
 }
 
-export async function UserUpdate(
+export async function UpdateUser(
   id: number,
   { name, email }: UserUpdateSchema
 ) {

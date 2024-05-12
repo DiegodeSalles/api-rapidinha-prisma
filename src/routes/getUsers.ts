@@ -1,10 +1,10 @@
 import express from "express";
-import { UserList } from "../model/user/UserList";
+import { GetUserList } from "../model/user/GetUserList";
 
 const router = express.Router();
 
 router.get("/users", async (req, res) => {
-  const users = await UserList();
+  const users = await GetUserList();
   res.send(users);
 });
 
