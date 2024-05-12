@@ -7,7 +7,7 @@ interface UserSchema {
   name?: string;
 }
 
-export async function userCreate(userData: UserSchema) {
+export async function UserCreate(userData: UserSchema) {
   const user = await prisma.user.create({
     data: {
       name: userData?.name,
