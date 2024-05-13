@@ -3,14 +3,21 @@ import { UpdatePost } from "../model/post/UpdatePost";
 
 const router = express.Router();
 
-router.put("/user/:authorId/posts/:id", async (req, res) => {
+router.put("/user/:authorId/posts/:postId", async (req, res) => {
   const authorId = Number(req.params.authorId);
-  const id = Number(req.params.id);
-  const postData = req.body;
+  const postId = Number(req.params.postId);
+  if (!postId || isNaN(postId) || !authorId || isNaN(authorId)) {
+    res.status(400).send("Id de usuário ou post inválido.");
+  }
+  try {
+    const postData = req.body;
 
-  const post = await UpdatePost(authorId, id, postData);
+    const post = await UpdatePost(authorId, postId, postData);
 
-  res.send(post);
+    res.status(200).send(post);
+  } catch (err) {
+    res.status(404).send("Usuário ou post não existe.");
+  }
 });
 
 export default router;

@@ -3,11 +3,18 @@ import { DeleteUser } from "../model/user/DeleteUser";
 
 const router = express.Router();
 
-router.delete("/user/:id", async (req, res) => {
-  const id = Number(req.params.id);
-  const user = await DeleteUser(id);
+router.delete("/user/:userId", async (req, res) => {
+  const userId = Number(req.params.userId);
+  if (!userId || isNaN(userId)) {
+    res.status(400).send("Id de usuário inválido.");
+  }
+  try {
+    await DeleteUser(userId);
 
-  res.send(user);
+    res.status(204);
+  } catch (err) {
+    res.status(404).send("Usuário não existe.");
+  }
 });
 
 export default router;

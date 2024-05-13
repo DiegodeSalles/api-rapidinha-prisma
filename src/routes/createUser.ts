@@ -10,9 +10,14 @@ interface UserSchema {
 
 router.post("/user/create", async (req, res) => {
   const userData: UserSchema = req.body;
-  const user = await CreateUser(userData);
+  try {
+    const user = await CreateUser(userData);
 
-  res.send(user);
+    res.status(201).send(user);
+  } catch (err) {
+    res.status(500).send("Erro interno no servidor.");
+    console.log(err);
+  }
 });
 
 export default router;

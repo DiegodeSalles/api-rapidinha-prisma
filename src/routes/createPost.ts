@@ -10,12 +10,21 @@ interface PostSchema {
   authorId: number;
 }
 
-router.post("/user/:id/post", async (req, res) => {
-  const userId = Number(req.params.id);
-  const postData: PostSchema = req.body;
-  const post = await CreatePost(userId, postData);
+router.post("/user/:userId/post", async (req, res) => {
+  const userId = Number(req.params.userId);
 
-  res.send(post);
+  if (!userId || isNaN(userId)) {
+    res.status(400).send("Id de usuário inválido.");
+  }
+
+  const postData: PostSchema = req.body;
+
+  try {
+    const post = await CreatePost(userId, postData);
+    res.status(201).send(post);
+  } catch (err) {
+    res.status(404).send("Usuário não existe.");
+  }
 });
 
 export default router;
