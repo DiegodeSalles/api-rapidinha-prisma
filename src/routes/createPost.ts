@@ -15,6 +15,7 @@ router.post("/user/:userId/post/create", async (req, res) => {
 
   if (!userId || isNaN(userId)) {
     res.status(400).send("Id de usuário inválido.");
+    return;
   }
 
   const postData: PostSchema = req.body;

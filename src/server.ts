@@ -10,11 +10,17 @@ import postsByUserId from "./routes/getPostsByUserId";
 import getPostById from "./routes/getPostById";
 import deletePost from "./routes/deletePost";
 import updatePost from "./routes/updatePost";
+import cors from "cors";
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 
 app.use(createUser);
 app.use(userList);

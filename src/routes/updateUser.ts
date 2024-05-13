@@ -7,6 +7,7 @@ router.put("/user/:userId", async (req, res) => {
   const userId = Number(req.params.userId);
   if (!userId || isNaN(userId)) {
     res.status(400).send("Id de usuário inválido.");
+    return;
   }
 
   try {

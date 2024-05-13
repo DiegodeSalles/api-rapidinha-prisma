@@ -8,6 +8,7 @@ router.get("/user/:authorId/post/:postId", async (req, res) => {
   const postId = Number(req.params.postId);
   if (!postId || isNaN(postId) || !authorId || isNaN(authorId)) {
     res.status(400).send("Id de usuário ou post inválido.");
+    return;
   }
 
   try {

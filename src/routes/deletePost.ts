@@ -8,6 +8,7 @@ router.delete("/user/:authorId/post/:postId", async (req, res) => {
   const authorId = Number(req.params.authorId);
   if (!postId || isNaN(postId) || !authorId || isNaN(authorId)) {
     res.status(400).send("Id de usuário ou post inválido.");
+    return;
   }
 
   try {
