@@ -3,7 +3,7 @@ import { UpdatePost } from "../model/post/UpdatePost";
 
 const router = express.Router();
 
-router.put("/user/:authorId/posts/:postId", async (req, res) => {
+router.put("/user/:authorId/post/:postId", async (req, res) => {
   const authorId = Number(req.params.authorId);
   const postId = Number(req.params.postId);
   if (!postId || isNaN(postId) || !authorId || isNaN(authorId)) {

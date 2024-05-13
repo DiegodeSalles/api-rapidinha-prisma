@@ -21,10 +21,10 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/user/1
+DELETE http://localhost:3000/user/8
 
 ###
-POST http://localhost:3000/user/7/post
+POST http://localhost:3000/user/7/post/create
 Content-Type: application/json
 
 {
@@ -33,7 +33,7 @@ Content-Type: application/json
   "published": true
 }
 ###
-PUT http://localhost:3000/user/2/posts/3
+PUT http://localhost:3000/user/2/post/3
 Content-Type: application/json
 
 {
@@ -42,10 +42,10 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/posts
+GET http://localhost:3000/users/posts
 ###
-GET http://localhost:3000/user/2/posts
+GET http://localhost:3000/user/2/post
 ###
-GET http://localhost:3000/user/2/posts/2
+GET http://localhost:3000/user/2/post/2
 ###
-DELETE http://localhost:3000/user/2/posts/3
+DELETE http://localhost:3000/user/2/post/3

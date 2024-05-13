@@ -3,7 +3,7 @@ import { GetPostById } from "../model/post/GetPostById";
 
 const router = express.Router();
 
-router.get("/user/:authorId/posts/:postId", async (req, res) => {
+router.get("/user/:authorId/post/:postId", async (req, res) => {
   const authorId = Number(req.params.authorId);
   const postId = Number(req.params.postId);
   if (!postId || isNaN(postId) || !authorId || isNaN(authorId)) {

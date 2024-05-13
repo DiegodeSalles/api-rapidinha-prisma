@@ -11,9 +11,10 @@ router.delete("/user/:userId", async (req, res) => {
   try {
     await DeleteUser(userId);
 
-    res.status(204);
+    res.status(204).send();
   } catch (err) {
     res.status(404).send("Usuário não existe.");
+    console.log(err);
   }
 });
 

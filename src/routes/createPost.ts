@@ -10,7 +10,7 @@ interface PostSchema {
   authorId: number;
 }
 
-router.post("/user/:userId/post", async (req, res) => {
+router.post("/user/:userId/post/create", async (req, res) => {
   const userId = Number(req.params.userId);
 
   if (!userId || isNaN(userId)) {
@@ -21,7 +21,7 @@ router.post("/user/:userId/post", async (req, res) => {
 
   try {
     const post = await CreatePost(userId, postData);
-    res.status(201).send(post);
+    res.status(200).send(post);
   } catch (err) {
     res.status(404).send("Usuário não existe.");
   }
