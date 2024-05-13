@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "name": "Outro teste",
-  "email": "outroteste@gmail.com"
+  "email": "outrotestke@gmail.com"
 }
 
 ###
@@ -24,7 +24,7 @@ Content-Type: application/json
 DELETE http://localhost:3000/user/1
 
 ###
-POST http://localhost:3000/user/0/post
+POST http://localhost:3000/user/7/post
 Content-Type: application/json
 
 {
